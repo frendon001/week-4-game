@@ -4,44 +4,56 @@
 <head>
 	<title>Justice League Rouge</title>
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans|Raleway" rel="stylesheet">
-	<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
 </head>
 
-<body>
+<body class="background-justice-league">
 	<div class="container-fluid">
 		<header class="row header justify-content-md-center">
 			<div class="col-md-8 text-center">
 				<h1 class="page-title"> Justice League Rouge</h1>
 			</div>
 		</header>
-		<div class="row justify-content-md-center active-row">
-			<div class="col-md-8 align-items-center active-col">
+		<div class="row justify-content-md-center message-row">
+			<div class="col-md-8 align-items-center message-col">
 				<p>The world needs your help! Four founding members of the Justice League have gone rouge and defeated the rest of the world's heroes. A mystical entity has provided you with the opportunity to take control of one of the four rouges in order to save humanity. Select a character from the list below and strategize how to deafeat the remaining rouges. Good luck!</p>
 			</div>
 		</div>
-		<div class="row justify-content-md-center text-center reset-btn-row d-none">
+		<div class="row text-center active-game-area align-items-center">
+			<div class="col-md-4">
+				<img class="player-character" src="assets/images/player_superman.png" alt="Player">
+			</div>
+			<div class="col-md-4">
+				<button class="btn">Attack!</button>
+					
+			</div>
+			<div class="col-md-4">
+				
+			</div>
+		</div>
+		<div class="row justify-content-md-center text-center reset-btn-row">
+		<!-- <div class="row justify-content-md-center text-center reset-btn-row d-none"> -->
 			<div class="col-md-6">
 				<a class="btn reset-btn" href="index.html" role="button">RESET GAME</a>
 			</div>
-		</div>
-
-			<div class="row justify-content-md-center text-center characters-row align-items-end">
+		</div> 
+				<div class="row justify-content-md-center text-center characters-row align-items-end d-none">	
+<!-- 			<div class="row justify-content-md-center text-center characters-row align-items-end"> -->
 				<div class="col-lg-2 col-md-3 col-sm-6 col-img">
-					<img class="icon-img" src="assets/images/icon_superman.png" alt="Superman">
+					<img class="icon-img superman" src="assets/images/icon_superman.png" alt="Superman">
 					<!-- 					<img class="icon-img" src="assets/images/icon_wonder_woman.png" alt="Wonder Woman">
 					<img class="icon-img" src="assets/images/icon_batman.png" alt="Batman">
 					<img class="icon-img" src="assets/images/icon_flash.png" alt="The Flash"> -->
 				</div>
 				<div class="col-lg-2 col-md-3 col-sm-6 col-img">
-					<img class="icon-img" src="assets/images/icon_wonder_woman.png" alt="Wonder Woman">
+					<img class="icon-img wonder-woman" src="assets/images/icon_wonder_woman.png" alt="Wonder Woman">
 				</div>
 				<div class="col-lg-2 col-md-3 col-sm-6 col-img">
-					<img class="icon-img" src="assets/images/icon_batman.png" alt="Batman">
+					<img class="icon-img batman" src="assets/images/icon_batman.png" alt="Batman">
 				</div>
 				<div class="col-lg-2 col-md-3 col-sm-6 col-img">
-					<img class="icon-img" src="assets/images/icon_flash.png" alt="The Flash">
+					<img class="icon-img flash" src="assets/images/icon_flash.png" alt="The Flash">
 				</div>
 			</div>
 			<div class="row justify-content-md-center footer-row">
@@ -61,5 +73,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
 <script src="assets/javascript/game.js"></script>
+
 
 </html>

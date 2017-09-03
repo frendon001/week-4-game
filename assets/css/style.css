@@ -2,7 +2,7 @@ html {
 	position: relative;
 	min-height: 100%;
 }
-body {
+.background-justice-league {
 	background: url("../images/justice_league.jpg") no-repeat center center fixed;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
@@ -11,6 +11,48 @@ body {
 	color: #ffffff;
 	margin-bottom: 60px;
 }
+
+.background-superman {
+	background: url("../images/daily_planet.jpg") no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	color: #ffffff;
+	margin-bottom: 60px;
+}
+
+.background-wonder-woman {
+	background: url("../images/themyscira.jpg") no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	color: #ffffff;
+	margin-bottom: 60px;
+}
+
+.background-batman {
+	background: url("../images/gotham_city.jpg") no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	color: #ffffff;
+	margin-bottom: 60px;
+}
+
+.background-flash {
+	background: url("../images/flash_museum.jpg") no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	color: #ffffff;
+	margin-bottom: 60px;
+}
+
+
 
 .container-fluid {
 /*	display: flex;
@@ -25,14 +67,14 @@ body {
 	padding: 10px 0px 10px 0px;
 }
 
-.active-row {
+.message-row {
 /*	min-height: 100px;*/
 	margin-bottom: 40px;
 	/*display: inherit;*/
 	
 }
 
-.active-col {
+.message-col {
 	background-color: rgba(37, 31, 51, 0.35);
 	border: 2px solid rgba(238, 239, 243, 0.35);
 	border-radius: 25px;
@@ -55,7 +97,7 @@ body {
 	/*	border: 1px solid #eeeff3;
 	background-color: rgb(37,31,51);
 	color: #eeeff3;*/
-	border: 1px solid rgba(37, 31, 51);
+	border: 2px solid rgba(37, 31, 51)!important;
 	background-color: #eeeff3;
 	color: rgb(37, 31, 51);
 }
@@ -66,6 +108,14 @@ body {
 	height: 325px;
 
 }
+
+/*.icon-img {
+	height: 225px;
+	position: absolute;
+
+	top: -150px
+
+}*/
 
 .col-img:hover {
 	/*	 border: 3px solid rgba(224, 241, 255, 0.6);
