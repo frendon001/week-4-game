@@ -2,7 +2,7 @@
 <html>
 
 <head>
-	<title>Justice League Rouge</title>
+	<title>Justice League Rogue</title>
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans|Raleway" rel="stylesheet">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
@@ -12,39 +12,74 @@
 	<div class="container-fluid">
 		<header class="row header justify-content-md-center">
 			<div class="col-md-8 text-center">
-				<h1 class="page-title"> Justice League Rouge</h1>
+				<h1 class="page-title"> Justice League Rogue</h1>
 			</div>
 		</header>
 		<div class="row justify-content-md-center message-row">
 			<div class="col-md-8 align-items-center message-col">
-				<p>The world needs your help! Four founding members of the Justice League have gone rouge and defeated the rest of the world's heroes. A mystical entity has provided you with the opportunity to take control of one of the four rouges in order to save humanity. Select a character from the list below and strategize how to deafeat the remaining rouges. Good luck!</p>
+				<p>The world needs your help! Four founding members of the Justice League have gone rogue and defeated the rest of the world's heroes. A mystical entity has provided you with the opportunity to take control of one of the four rogues in order to save humanity. Select a character from the list below and strategize how to deafeat the remaining rogues. Good luck!</p>
 			</div>
 		</div>
 		<div class="row text-center active-game-area align-items-center">
-			<div class="col-md-4">
-				<img class="player-character" src="assets/images/player_superman.png" alt="Player">
+			<div class="col-md-5 col-sm-4 active-game-col d-none">
+				<img class="combat" id="player-character" src="assets/images/player_superman.png" alt="Player">
+				<p>Attack Points:<span id="player-attack"></span></p>
+				<p>Health Points:<span id="player-hp"></span></p>
 			</div>
-			<div class="col-md-4">
-				<button class="btn">Attack!</button>
-					
+			<div class="col-md-2 col-sm-4 align-self-end action-btns align-items-center active-game-col d-none">
+				<div class="mx-auto">
+					<button class="btn game-btn ">Attack!</button>
+				</div>
+				<div class="mx-auto">
+					<a class="btn reset-btn game-btn" href="index.html" role="button">RESET GAME</a>
+				</div>		
 			</div>
-			<div class="col-md-4">
+			<div class="col-md-5 col-sm-4 active-game-col d-none">
+				<div class="opponent d-none">
+					<img class="combat" id="opponent-character" src="#" alt="Opponent">
+					<p>Attack Points:<span id="opponent-attack"></span></p>
+					<p>Health Points:<span id="opponent-hp"></span></p>
+				</div>
+
+			</div>
+<!-- 			ml-md-auto required when all are displayed -->
+			<div class="col-md-12 col-lg-12 mx-auto">
+				<br>
+				<p>Rogues</p>
+				<div class="row justify-content-md-center text-center characters-row align-items-end">
+				<div class="col-lg-2 col-md-3 col-sm-3 col-img" id="col-superman">
+					<img class="icon-img rogue-list" id="superman-img" src="assets/images/icon_superman.png" alt="Superman">
+				</div>
+				<div class="col-lg-2 col-md-3 col-sm-3 col-img" id="col-wonder-woman">
+					<img class="icon-img rogue-list" id="wonder-woman-img" src="assets/images/icon_wonder_woman.png" alt="Wonder Woman">
+				</div>
+				<div class="col-lg-2 col-md-3 col-sm-3 col-img" id="col-batman">
+					<img class="icon-img rogue-list" id="batman-img" src="assets/images/icon_batman.png" alt="Batman">
+				</div>
+				<div class="col-lg-2 col-md-3 col-sm-3 col-img" id="col-flash">
+					<img class="icon-img rogue-list" id="flash-img" src="assets/images/icon_flash.png" alt="The Flash">
+				</div>
+			</div>
+<!-- 			<img class="stand-by" src="assets/images/icon_superman.png" alt="Opponent">
+			<img class="stand-by" src="assets/images/icon_batman.png" alt="Opponent">
+			<img class="stand-by" src="assets/images/icon_wonder_woman.png" alt="Opponent">
+			<img class="stand-by" src="assets/images/icon_flash.png" alt="Opponent"> -->
 				
 			</div>
 		</div>
-		<div class="row justify-content-md-center text-center reset-btn-row">
-		<!-- <div class="row justify-content-md-center text-center reset-btn-row d-none"> -->
-			<div class="col-md-6">
+		<div class="row justify-content-md-center text-center reset-btn-row align-items-end" >
+		<!-- <div class="row justify-content-md-center text-center reset-btn-row align-items-center d-none"> -->
+<!-- 			<div class="col-md-6">
 				<a class="btn reset-btn" href="index.html" role="button">RESET GAME</a>
 			</div>
-		</div> 
-				<div class="row justify-content-md-center text-center characters-row align-items-end d-none">	
-<!-- 			<div class="row justify-content-md-center text-center characters-row align-items-end"> -->
+		</div>  -->
+<!-- 				<div class="row justify-content-md-center text-center characters-row align-items-end d-none"> -->	
+<!-- 			<div class="row justify-content-md-center text-center characters-row align-items-end  d-none">
 				<div class="col-lg-2 col-md-3 col-sm-6 col-img">
 					<img class="icon-img superman" src="assets/images/icon_superman.png" alt="Superman">
-					<!-- 					<img class="icon-img" src="assets/images/icon_wonder_woman.png" alt="Wonder Woman">
+										<img class="icon-img" src="assets/images/icon_wonder_woman.png" alt="Wonder Woman">
 					<img class="icon-img" src="assets/images/icon_batman.png" alt="Batman">
-					<img class="icon-img" src="assets/images/icon_flash.png" alt="The Flash"> -->
+					<img class="icon-img" src="assets/images/icon_flash.png" alt="The Flash">
 				</div>
 				<div class="col-lg-2 col-md-3 col-sm-6 col-img">
 					<img class="icon-img wonder-woman" src="assets/images/icon_wonder_woman.png" alt="Wonder Woman">
@@ -55,13 +90,13 @@
 				<div class="col-lg-2 col-md-3 col-sm-6 col-img">
 					<img class="icon-img flash" src="assets/images/icon_flash.png" alt="The Flash">
 				</div>
-			</div>
-			<div class="row justify-content-md-center footer-row">
+			</div> -->
+			<div class="row justify-content-md-center footer-row no-gutters">
+				<div class="container text-center">
 				<footer class="footer">
-					<div class="container text-center">
 						<span>&copy; Copyright 2017 Fausto Rendon</span>
-					</div>
 				</footer>
+				</div>
 			</div>
 
 		<audio id="audio-win">
