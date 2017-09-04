@@ -100,6 +100,10 @@ p {
 	opacity: 0.4;
 }
 
+#attack-btn {
+	cursor: pointer;
+}
+
 .characters-row {
 /*	height: 60vh;*/
 /*	flex: 1 0 auto;*/
