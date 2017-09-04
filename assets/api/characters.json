@@ -1,0 +1,42 @@
+[
+	{
+		"name": "Superman",
+		"backgroundCSS": "background-superman",
+		"playerImg": "assets/images/player_superman.png",
+		"colName": "#col-superman",
+		"hp": 117,
+		"attack": 17,
+		"baseAttack": 17,
+		"counter": 27
+	},
+	{
+		"name": "Wonder Woman",
+		"backgroundCSS": "background-wonder-woman",
+		"playerImg": "assets/images/player_wonder_woman.png",
+		"colName": "#col-superman",
+		"hp": 150,
+		"attack": 12,
+		"baseAttack": 12,
+		"counter": 24
+	},
+	{
+		"name": "Batman",
+		"backgroundCSS": "background-batman",
+		"playerImg": "assets/images/player_batman.png",
+		"colName": "#col-batman",
+		"hp": 190,
+		"attack": 8,
+		"baseAttack": 8,
+		"counter": 16
+	},
+	{
+		"name": "The Flash",
+		"backgroundCSS": "background-flash",
+		"playerImg": "assets/images/player_flash.png",
+		"colName": "#col-flash",
+		"hp": 165,
+		"attack": 10,
+		"baseAttack": 10,
+		"counter": 20
+	}
+]
