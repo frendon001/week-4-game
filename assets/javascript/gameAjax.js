@@ -1,3 +1,5 @@
+var data = [];
+
 var game = {
 	selectCharacter: false,
 	selectOpponent: false,
@@ -45,6 +47,42 @@ var game = {
 		baseAttack: 10,
 		counter: 20
 	},
+	assignPlayer: function(character) {
+		if (character === "Superman") {
+			game.player = game.superman;
+
+		}
+		if (character === "Wonder Woman") {
+			game.player = game.wonderWoman;
+
+		}
+		if (character === "Batman") {
+			game.player = game.batman;
+
+		}
+		if (character === "The Flash") {
+			game.player = game.flash;
+
+		}
+
+	},
+	assignOpponent: function(character) {
+		if (character === "Superman") {
+			game.opponent = game.superman;
+
+		}
+		if (character === "Wonder Woman") {
+			game.opponent = game.wonderWoman;
+
+		}
+		if (character === "Batman") {
+			game.opponent = game.batman;
+
+		}
+		if (character === "The Flash") {
+			game.opponent = game.flash;
+		}
+	},
 	startGameFormat: function(character) {
 		//set background based on selected character
 		$("body").removeClass();
@@ -58,33 +96,89 @@ var game = {
 		//set different background based on character selected
 		//remove selected character from rogue list
 		//add selected character to player area
-		if (character === "Superman") {
-			$("body").addClass("background-superman");
-			$("#col-superman").addClass("d-none");
-			$("#player-character").attr("src", "assets/images/player_superman.png");
-			game.player = game.superman;
-		}
-		if (character === "Wonder Woman") {
-			$("body").addClass("background-wonder-woman");
-			$("#col-wonder-woman").addClass("d-none");
-			$("#player-character").attr("src", "assets/images/player_wonder_woman.png");
-			game.player = game.wonderWoman;
-		}
-		if (character === "Batman") {
-			$("body").addClass("background-batman");
-			$("#col-batman").addClass("d-none");
-			$("#player-character").attr("src", "assets/images/player_batman.png");
-			game.player = game.batman;
-		}
-		if (character === "The Flash") {
-			$("body").addClass("background-flash");
-			$("#col-flash").addClass("d-none");
-			$("#player-character").attr("src", "assets/images/player_flash.png");
-			game.player = game.flash;
-		}
 
-		$("#player-attack").text(game.player.attack);
-		$("#player-hp").text(game.player.hp);
+// data = $.ajax({
+// 	async: false,
+// 	type: 'GET',
+//     url: '/api/characters.json',
+//     dataType: "JSON",
+//     success: function(data) {
+//         //myvar = data;
+//     }
+// }).responseJSON;
+
+		$.getJSON( "assets/api/characters.json")
+			.done(function( characters ) {
+				$.each(characters, function(i, characterRef){
+
+					if (characterRef.name === character) {
+						$("body").addClass(characterRef.backgroundCSS);
+						$(characterRef.colName).addClass("d-none");
+						$("#player-character").attr("src", characterRef.playerImg);
+						$("#player-attack").text(characterRef.attack);
+						$("#player-hp").text(characterRef.hp);
+						selected = characterRef;
+					}
+				});
+
+			})
+			.fail(function( jqxhr, textStatus, error ) {
+				var err = textStatus + ", " + error;
+				console.log( "Request Failed: " + err );
+		});
+
+
+		// $.ajax({
+		// 	type: 'GET',
+		// 	url: '/api/characters.json',
+		// 	success: function(characters) {
+		// 		$.each(characters, function(i, characterRef){
+
+		// 			if (characterRef.name === character) {
+		// 				$("body").addClass(characterRef.backgroundCSS);
+		// 				$(characterRef.colName).addClass("d-none");
+		// 				$("#player-character").attr("src", characterRef.playerImg);
+		// 				game.player = characterRef;
+		// 				console.log(game.player);
+		// 				console.log("test");
+
+		// 			}
+
+		// 		});
+		// 	},
+		// 	error: function(){
+		// 		console.log("Error loading characters.");
+		// 	}
+		// });
+
+
+		// if (character === "Superman") {
+		// 	$("body").addClass("background-superman");
+		// 	$("#col-superman").addClass("d-none");
+		// 	$("#player-character").attr("src", "assets/images/player_superman.png");
+		// 	game.player = game.superman;
+		// }
+		// if (character === "Wonder Woman") {
+		// 	$("body").addClass("background-wonder-woman");
+		// 	$("#col-wonder-woman").addClass("d-none");
+		// 	$("#player-character").attr("src", "assets/images/player_wonder_woman.png");
+		// 	game.player = game.wonderWoman;
+		// }
+		// if (character === "Batman") {
+		// 	$("body").addClass("background-batman");
+		// 	$("#col-batman").addClass("d-none");
+		// 	$("#player-character").attr("src", "assets/images/player_batman.png");
+		// 	game.player = game.batman;
+		// }
+		// if (character === "The Flash") {
+		// 	$("body").addClass("background-flash");
+		// 	$("#col-flash").addClass("d-none");
+		// 	$("#player-character").attr("src", "assets/images/player_flash.png");
+		// 	game.player = game.flash;
+		// }
+
+		// $("#player-attack").text(game.player.attack);
+		// $("#player-hp").text(game.player.hp);
 	},
 	newOpponent: function(character) {
 		//display oppnent details
@@ -94,32 +188,53 @@ var game = {
 		//new message at the top of the page
 		$(".message-col p").text("Defeat " + character + " in a one on one match!");
 		//add selected character to opponent section
-		if (character === "Superman") {
-			$("body").addClass("background-superman");
-			$("#col-superman").addClass("d-none");
-			$("#opponent-character").attr("src", "assets/images/player_superman.png");
-			game.opponent = game.superman;
-		}
-		if (character === "Wonder Woman") {
-			$("body").addClass("background-wonder-woman");
-			$("#col-wonder-woman").addClass("d-none");
-			$("#opponent-character").attr("src", "assets/images/player_wonder_woman.png");
-			game.opponent = game.wonderWoman;
-		}
-		if (character === "Batman") {
-			$("body").addClass("background-batman");
-			$("#col-batman").addClass("d-none");
-			$("#opponent-character").attr("src", "assets/images/player_batman.png");
-			game.opponent = game.batman;
-		}
-		if (character === "The Flash") {
-			$("body").addClass("background-flash");
-			$("#col-flash").addClass("d-none");
-			$("#opponent-character").attr("src", "assets/images/player_flash.png");
-			game.opponent = game.flash;
-		}
-		$("#opponent-attack").text(game.opponent.attack);
-		$("#opponent-hp").text(game.opponent.hp);
+		$.getJSON( "assets/api/characters.json")
+			.done(function( characters ) {
+				var selected = "";
+				$.each(characters, function(i, characterRef){
+
+					if (characterRef.name === character) {
+						$("body").addClass(characterRef.backgroundCSS);
+						$(characterRef.colName).addClass("d-none");
+						$("#opponent-character").attr("src", characterRef.playerImg);
+						$("#opponent-attack").text(characterRef.attack);
+						$("#opponent-hp").text(characterRef.hp);
+						selected = characterRef;
+					}
+				});
+				//game.player = selected;
+
+			})
+			.fail(function( jqxhr, textStatus, error ) {
+				var err = textStatus + ", " + error;
+				console.log( "Request Failed: " + err );
+		});
+		// if (character === "Superman") {
+		// 	$("body").addClass("background-superman");
+		// 	$("#col-superman").addClass("d-none");
+		// 	$("#opponent-character").attr("src", "assets/images/player_superman.png");
+		// 	game.opponent = game.superman;
+		// }
+		// if (character === "Wonder Woman") {
+		// 	$("body").addClass("background-wonder-woman");
+		// 	$("#col-wonder-woman").addClass("d-none");
+		// 	$("#opponent-character").attr("src", "assets/images/player_wonder_woman.png");
+		// 	game.opponent = game.wonderWoman;
+		// }
+		// if (character === "Batman") {
+		// 	$("body").addClass("background-batman");
+		// 	$("#col-batman").addClass("d-none");
+		// 	$("#opponent-character").attr("src", "assets/images/player_batman.png");
+		// 	game.opponent = game.batman;
+		// }
+		// if (character === "The Flash") {
+		// 	$("body").addClass("background-flash");
+		// 	$("#col-flash").addClass("d-none");
+		// 	$("#opponent-character").attr("src", "assets/images/player_flash.png");
+		// 	game.opponent = game.flash;
+		// }
+		// $("#opponent-attack").text(game.opponent.attack);
+		// $("#opponent-hp").text(game.opponent.hp);
 	}
 
 };
@@ -137,14 +252,20 @@ $(".col-img").on("click", function() {
 		$("#attack-btn").addClass("d-none");
 		game.selectCharacter = true;
 		game.startGameFormat(clickedCharacter);
-		console.log(game.player);
+		game.assignPlayer(clickedCharacter);
 
-	} else if (game.selectOpponent == false && !isDefeated) {
+	} else if (game.selectOpponent === false && !isDefeated) {
 		$("#attack-btn").removeClass("d-none");
 		game.selectOpponent = true;
 		//select opponet to being attack if not already defeated
 		game.newOpponent(clickedCharacter);
+		game.assignOpponent(clickedCharacter);
 	}
+
+	console.log("log player");
+	console.log(game.player);
+	console.log("log opponent");
+	console.log(game.opponent);
 });
 
 
@@ -154,7 +275,7 @@ $("#attack-btn").on("click", function() {
 		//update message
 		$(".message-col p").text(game.player.name + " attacked with " +
 			game.player.attack + " and " + game.opponent.name +
-			"countered with " + game.opponent.counter);
+			" countered with " + game.opponent.counter);
 		//apply attack
 		game.opponent.hp -= game.player.attack;
 		// check if opponent is defeated
@@ -164,7 +285,7 @@ $("#attack-btn").on("click", function() {
 			game.opponentsDefeated++;
 			$("#attack-btn").addClass("d-none");
 			$(".message-col p").text("You defeated " + game.opponent.name + "! Select another opponent.");
-			//display oppnent details
+			//display opponent details
 			$(".opponent").addClass("d-none");
 			if (character === "Superman") {
 				$("#col-superman").removeClass("d-none active-rogue").addClass("defeated");
@@ -211,25 +332,30 @@ $("#attack-btn").on("click", function() {
 	$( document ).ready(function() {
 	// Handler for .ready() called.
 	// add attack and HP information from object
-		$("#col-superman .character-attack").text(game.superman.attack);
-		$("#col-superman .character-hp").text(game.superman.hp);
+		// $("#col-superman .character-attack").text(game.superman.attack);
+		// $("#col-superman .character-hp").text(game.superman.hp);
 
-		$("#col-wonder-woman .character-attack").text(game.wonderWoman.attack);
-		$("#col-wonder-woman .character-hp").text(game.wonderWoman.hp);
+		// $("#col-wonder-woman .character-attack").text(game.wonderWoman.attack);
+		// $("#col-wonder-woman .character-hp").text(game.wonderWoman.hp);
 
-		$("#col-batman .character-attack").text(game.batman.attack);
-		$("#col-batman .character-hp").text(game.batman.hp);
+		// $("#col-batman .character-attack").text(game.batman.attack);
+		// $("#col-batman .character-hp").text(game.batman.hp);
 
-		$("#col-flash .character-attack").text(game.flash.attack);
-		$("#col-flash .character-hp").text(game.flash.hp);
+		// $("#col-flash .character-attack").text(game.flash.attack);
+		// $("#col-flash .character-hp").text(game.flash.hp);
 
 
 		$.ajax({
 			type: 'GET',
-			url: '../api/characters.json',
+			url: 'assets/api/characters.json',
 			success: function(characters) {
 				$.each(characters, function(i, character){
-					console.log(character);
+					var characterAttack = character.colName + " .character-attack";
+					var characterHp = character.colName + " .character-hp";
+
+					$(characterAttack).text(character.attack);
+					$(characterHp).text(character.hp);
+					//console.log(character);
 				});
 			},
 			error: function(){

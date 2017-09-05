@@ -13,7 +13,7 @@
 		"name": "Wonder Woman",
 		"backgroundCSS": "background-wonder-woman",
 		"playerImg": "assets/images/player_wonder_woman.png",
-		"colName": "#col-superman",
+		"colName": "#col-wonder-woman",
 		"hp": 150,
 		"attack": 12,
 		"baseAttack": 12,
