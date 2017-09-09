@@ -96,6 +96,7 @@ p {
 
 .combat {
 	height: 35vh;
+	position: relative;
 }
 
 .character {
