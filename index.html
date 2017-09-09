@@ -22,9 +22,11 @@
 		</div>
 		<div class="row text-center active-game-area align-items-center">
 			<div class="col-md-5 col-sm-4 active-game-col d-none">
-				<img class="combat" id="player-character" src="assets/images/player_superman.png" alt="Player">
-				<p>Attack: <span id="player-attack"></span></p>
-				<p>Health: <span id="player-hp"></span></p>
+				<div class="player">
+					<img class="combat" id="player-character" src="assets/images/player_superman.png" alt="Player">
+					<p>Attack: <span id="player-attack"></span></p>
+					<p>Health: <span id="player-hp"></span></p>
+				</div>
 			</div>
 			<div class="col-md-2 col-sm-4 align-self-end action-btns align-items-center active-game-col d-none">
 				<div class="mx-auto">
@@ -32,7 +34,7 @@
 				</div>
 				<div class="mx-auto">
 					<a class="btn reset-btn game-btn" href="index.html" role="button">RESET GAME</a>
-				</div>		
+				</div>
 			</div>
 			<div class="col-md-5 col-sm-4 active-game-col d-none">
 				<div class="opponent d-none">
@@ -41,91 +43,59 @@
 					<p>Counter: <span id="opponent-counter"></span></p>
 					<p>Health: <span id="opponent-hp"></span></p>
 				</div>
-
 			</div>
-<!-- 			ml-md-auto required when all are displayed -->
+			<!-- mx-auto required when all are displayed -->
 			<div class="col-md-12 col-lg-12 mx-auto">
 				<br>
 				<p>Rogues</p>
 				<div class="row justify-content-md-center text-center characters-row align-items-end">
-				<div class="col-lg-2 col-md-3 col-sm-3 col-img active-rogue" id="col-superman">
-					<img class="icon-img rogue-list" id="superman-img" src="assets/images/icon_superman.png" alt="Superman">
-					<p class="character">Attack: <span class="character-attack"></span></p>
-					<p class="character">Counter: <span class="character-counter"></span></p>
-					<p class="character">Health: <span class="character-hp"></span></p>
+					<div class="col-lg-2 col-md-3 col-sm-3 col-6 col-img active-rogue" id="col-superman">
+						<img class="icon-img rogue-list" id="superman-img" src="assets/images/icon_superman.png" alt="Superman">
+						<div class="character-attributes">
+							<p class="character">Attack: <span class="character-attack"></span></p>
+							<p class="character">Counter: <span class="character-counter"></span></p>
+							<p class="character">Health: <span class="character-hp"></span></p>
+						</div>
+					</div>
+					<div class="col-lg-2 col-md-3 col-sm-3 col-6 col-img active-rogue" id="col-wonder-woman">
+						<img class="icon-img rogue-list" id="wonder-woman-img" src="assets/images/icon_wonder_woman.png" alt="Wonder Woman">
+						<div class="character-attributes">
+							<p class="character">Attack: <span class="character-attack"></span></p>
+							<p class="character">Counter: <span class="character-counter"></span></p>
+							<p class="character">Health: <span class="character-hp"></span></p>
+						</div>
+					</div>
+					<div class="col-lg-2 col-md-3 col-sm-3 col-6 col-img active-rogue" id="col-batman">
+						<img class="icon-img rogue-list" id="batman-img" src="assets/images/icon_batman.png" alt="Batman">
+						<div class="character-attributes">
+							<p class="character">Attack: <span class="character-attack"></span></p>
+							<p class="character">Counter: <span class="character-counter"></span></p>
+							<p class="character">Health: <span class="character-hp"></span></p>
+						</div>
+					</div>
+					<div class="col-lg-2 col-md-3 col-sm-3 col-6 col-img active-rogue" id="col-flash">
+						<img class="icon-img rogue-list" id="flash-img" src="assets/images/icon_flash.png" alt="The Flash">
+						<div class="character-attributes">
+							<p class="character">Attack: <span class="character-attack"></span></p>
+							<p class="character">Counter: <span class="character-counter"></span></p>
+							<p class="character">Health: <span class="character-hp"></span></p>
+						</div>
+					</div>
 				</div>
-				<div class="col-lg-2 col-md-3 col-sm-3 col-img active-rogue" id="col-wonder-woman">
-					<img class="icon-img rogue-list" id="wonder-woman-img" src="assets/images/icon_wonder_woman.png" alt="Wonder Woman">
-					<p class="character">Attack: <span class="character-attack"></span></p>
-					<p class="character">Counter: <span class="character-counter"></span></p>
-					<p class="character">Health: <span class="character-hp"></span></p>
-				</div>
-				<div class="col-lg-2 col-md-3 col-sm-3 col-img active-rogue" id="col-batman">
-					<img class="icon-img rogue-list" id="batman-img" src="assets/images/icon_batman.png" alt="Batman">
-					<p class="character">Attack: <span class="character-attack"></span></p>
-					<p class="character">Counter: <span class="character-counter"></span></p>
-					<p class="character">Health: <span class="character-hp"></span></p>
-				</div>
-				<div class="col-lg-2 col-md-3 col-sm-3 col-img active-rogue" id="col-flash">
-					<img class="icon-img rogue-list" id="flash-img" src="assets/images/icon_flash.png" alt="The Flash">
-					<p class="character">Attack: <span class="character-attack"></span></p>
-					<p class="character">Counter: <span class="character-counter"></span></p>
-					<p class="character">Health: <span class="character-hp"></span></p>
-				</div>
-			</div>
-<!-- 			<img class="stand-by" src="assets/images/icon_superman.png" alt="Opponent">
-			<img class="stand-by" src="assets/images/icon_batman.png" alt="Opponent">
-			<img class="stand-by" src="assets/images/icon_wonder_woman.png" alt="Opponent">
-			<img class="stand-by" src="assets/images/icon_flash.png" alt="Opponent"> -->
-				
 			</div>
 		</div>
-		<!-- <div class="row justify-content-md-center text-center reset-btn-row align-items-end" > -->
-		<!-- <div class="row justify-content-md-center text-center reset-btn-row align-items-center d-none"> -->
-<!-- 			<div class="col-md-6">
-				<a class="btn reset-btn" href="index.html" role="button">RESET GAME</a>
-			</div>
-		</div>  -->
-<!-- 				<div class="row justify-content-md-center text-center characters-row align-items-end d-none"> -->	
-<!-- 			<div class="row justify-content-md-center text-center characters-row align-items-end  d-none">
-				<div class="col-lg-2 col-md-3 col-sm-6 col-img">
-					<img class="icon-img superman" src="assets/images/icon_superman.png" alt="Superman">
-										<img class="icon-img" src="assets/images/icon_wonder_woman.png" alt="Wonder Woman">
-					<img class="icon-img" src="assets/images/icon_batman.png" alt="Batman">
-					<img class="icon-img" src="assets/images/icon_flash.png" alt="The Flash">
-				</div>
-				<div class="col-lg-2 col-md-3 col-sm-6 col-img">
-					<img class="icon-img wonder-woman" src="assets/images/icon_wonder_woman.png" alt="Wonder Woman">
-				</div>
-				<div class="col-lg-2 col-md-3 col-sm-6 col-img">
-					<img class="icon-img batman" src="assets/images/icon_batman.png" alt="Batman">
-				</div>
-				<div class="col-lg-2 col-md-3 col-sm-6 col-img">
-					<img class="icon-img flash" src="assets/images/icon_flash.png" alt="The Flash">
-				</div>
-			</div> -->
-			<div class="row footer-row no-gutters">
-				<div class="container text-center">
+		<div class="row footer-row no-gutters">
+			<div class="container text-center">
 				<footer class="footer">
-						<span>&copy; Copyright 2017 Fausto Rendon</span>
+					<span>&copy; Copyright 2017 Fausto Rendon</span>
 				</footer>
-				</div>
 			</div>
-
-<!-- 		<audio id="audio-win">
-			<source src="assets/audio/attack.mp3" type="audio/mpeg">
-			Your browser does not support the audio element.
-		</audio> -->
+		</div>
 	</div>
 </body>
-<!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> -->
-<script
-  src="https://code.jquery.com/jquery-3.2.1.min.js"
-  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-  crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
 <script src="assets/javascript/gameAjax.js"></script>
-
 
 </html>

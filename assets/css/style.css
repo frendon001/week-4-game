@@ -78,7 +78,7 @@ p {
 }
 
 .message-row {
-	margin-bottom: 30px;
+	margin-bottom: 15px;
 	font-size: 14px;
 }
 
@@ -105,7 +105,19 @@ p {
 
 
 .characters-row {
-	margin-bottom: 10px;
+	margin-bottom: 0px;
+}
+
+.character-attributes {
+	position: relative;
+	background-color: rgba(71, 71, 71, 0.50);
+	border: 2px solid rgba(238, 239, 243, 0.15);
+	border-radius: 5px;
+}
+
+.character-attributes-start {
+	background-color: rgba(77, 71, 71, 0.75);
+	bottom: 35px;
 }
 
 .reset-btn-row {
@@ -132,6 +144,7 @@ p {
 
 .icon-img {
 	height: 325px;
+
 }
 
 
@@ -218,3 +231,10 @@ p {
 	}
 
 }
+
+
+/*@media screen and  (max-width: 576px) { 
+	.character-attributes {
+		width: 50%;
+	}
+}*/
