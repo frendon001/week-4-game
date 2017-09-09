@@ -5,12 +5,12 @@ html {
 
 p {
 	margin: 0px;
-	 text-shadow:
-	-1px -1px 1px rgb(37, 31, 51),  
+	text-shadow: -1px -1px 1px rgb(37, 31, 51),
 	1px -1px 1px rgb(37, 31, 51),
 	-1px 1px 1px rgb(37, 31, 51),
 	1px 1px 1px rgb(37, 31, 51);
 }
+
 
 
 /*predifined backgrounds to be used based on character selection*/
@@ -65,17 +65,13 @@ p {
 	margin-bottom: 50px;
 }
 
-/*.container-fluid {
-	display: flex;
-	flex-direction: column;
-	height: 100vh;
-}*/
+
+/*Page Formatting*/
 
 .page-title {
 	font-size: 40px;
 	padding: 10px 0px 0px 0px;
-	text-shadow:
-	-1px -1px 1px rgb(37, 31, 51),  
+	text-shadow: -1px -1px 1px rgb(37, 31, 51),
 	1px -1px 1px rgb(37, 31, 51),
 	-1px 1px 1px rgb(37, 31, 51),
 	1px 1px 1px rgb(37, 31, 51);
@@ -90,60 +86,26 @@ p {
 	background-color: rgba(37, 31, 51, 0.25);
 	border: 2px solid rgba(238, 239, 243, 0.15);
 	border-radius: 5px;
-	padding: 15px;
+	padding: 10px;
 }
+
 .active-game-area {
 	background-color: rgba(37, 31, 51, 0.2);
 	box-shadow: 0 0 80px 0 rgba(37, 31, 51, 0.4);
 }
 
 .combat {
-	height: 38vh;
+	height: 35vh;
 }
 
-.stand-by {
-	height: 20vh;
+.character {
+	font-size: 12px;
 }
 
-.stand-by-active {
-	border-radius: 20px;
-	box-shadow: 0 3px 15px 0 rgba(243, 226, 8, 0.5), 0 5px 20px 0 rgba(243, 226, 8, 0.5);
-}
-
-.defeated {
-	opacity: 0.50;
-}
-
-#attack-btn {
-	cursor: pointer;
-	background-color: #AE0224;
-	color: #ffffff;
-	padding: 10px 20px 10px 20px;
-	font-size: 20px;
-}
-
-#attack-btn:hover {
-	border: 1px solid #ffffff;
-}
 
 .characters-row {
-/*	height: 60vh;*/
-/*	flex: 1 0 auto;*/
-/*		position: absolute;*/
-/*	bottom: 0;*/
-	
+	margin-bottom: 10px;
 }
-
-
-/*.game-btn {
-	display: block;
-}
-*/
-
-
-/*.action-btns{
-	margin-top: 40px;
-}*/
 
 .reset-btn-row {
 	margin-bottom: 10px;
@@ -164,7 +126,9 @@ p {
 }
 
 
+
 /*Used at start of game*/
+
 .icon-img {
 	height: 325px;
 }
@@ -191,6 +155,35 @@ p {
 	width: 100%;
 	height: 50px;
 	line-height: 50px;
+}
+
+
+
+/*classes used upon action*/
+
+.stand-by {
+	height: 20vh;
+}
+
+.stand-by-active {
+	border-radius: 20px;
+	box-shadow: 0 3px 15px 0 rgba(243, 226, 8, 0.5), 0 5px 20px 0 rgba(243, 226, 8, 0.5);
+}
+
+.defeated {
+	opacity: 0.50;
+}
+
+#attack-btn {
+	cursor: pointer;
+	background-color: #AE0224;
+	color: #ffffff;
+	padding: 10px 20px 10px 20px;
+	font-size: 20px;
+}
+
+#attack-btn:hover {
+	border: 1px solid #ffffff;
 }
 
 
@@ -222,36 +215,5 @@ p {
 		margin-top: 20px;
 		margin-bottom: 20px;
 	}
-	/*	.container-fluid {
-		display: flex;
-		flex-direction: column;
-		height: 100vh;
-	}
 
-	.row{
-		display: block;
-	}
-
-	.col-sm-6 {
-		max-width: 100%
-	}
-	.active-row {
-		min-height: initial;
-	}
-	.characters-row {
-		flex: none;
-		display: inherit;
-	}
-	.col-img {
-		padding: 10px;
-	}
-	.icon-img {
-		height: 275px;
-
-	}
-	.footer-row {
-		background-color: #474747;
-		margin-top: 20px;
-		flex: 1 0 auto;
-	}*/
 }
