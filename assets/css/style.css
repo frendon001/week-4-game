@@ -23,6 +23,7 @@ p {
 	background-size: cover;
 	color: #ffffff;
 	margin-bottom: 50px;
+	font-family: 'Open Sans', sans-serif;
 }
 
 .background-superman {
@@ -33,6 +34,7 @@ p {
 	background-size: cover;
 	color: #ffffff;
 	margin-bottom: 50px;
+	font-family: 'Open Sans', sans-serif;
 }
 
 .background-wonder-woman {
@@ -43,6 +45,7 @@ p {
 	background-size: cover;
 	color: #ffffff;
 	margin-bottom: 50px;
+	font-family: 'Open Sans', sans-serif;
 }
 
 .background-batman {
@@ -53,6 +56,7 @@ p {
 	background-size: cover;
 	color: #ffffff;
 	margin-bottom: 50px;
+	font-family: 'Open Sans', sans-serif;
 }
 
 .background-flash {
@@ -63,6 +67,7 @@ p {
 	background-size: cover;
 	color: #ffffff;
 	margin-bottom: 50px;
+	font-family: 'Open Sans', sans-serif;
 }
 
 
@@ -75,6 +80,7 @@ p {
 	1px -1px 1px rgb(37, 31, 51),
 	-1px 1px 1px rgb(37, 31, 51),
 	1px 1px 1px rgb(37, 31, 51);
+
 }
 
 .message-row {
@@ -95,7 +101,7 @@ p {
 }
 
 .combat {
-	height: 35vh;
+	height: 33vh;
 	position: relative;
 }
 
@@ -121,7 +127,7 @@ p {
 }
 
 .reset-btn-row {
-	margin-bottom: 10px;
+	margin-bottom: 5px;
 	height: 5vh;
 }
 
@@ -176,7 +182,7 @@ p {
 /*classes used upon action*/
 
 .stand-by {
-	height: 20vh;
+	height: 18vh;
 }
 
 .stand-by-active {

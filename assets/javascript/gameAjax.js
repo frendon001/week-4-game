@@ -103,6 +103,7 @@ $(document).ready(function() {
 				});
 		},
 		animateAttack: function(element,type) {
+			//animate player towards opponent
 			if(type === "player"){
 				$( element ).animate({
 				left: "+=90",
@@ -114,6 +115,7 @@ $(document).ready(function() {
 				500
 			);
 			}
+			//animate opponent towards player
 			if(type === "opponent"){
 				$( element ).animate({
 				left: "-=90",
@@ -130,6 +132,11 @@ $(document).ready(function() {
 
 	};
 
+
+	//*********
+	// Start of GAME JS
+	//*********
+
 	// create audio element and assign it to attack sound
 	var audioAttack1 = document.createElement('audio');
 	audioAttack1.setAttribute('src', 'assets/audio/attack1.mp3');
@@ -140,21 +147,11 @@ $(document).ready(function() {
 	audioWin.setAttribute('src', 'assets/audio/winFanFare.mp3');
 	var audioLoss = document.createElement('audio');
 	audioLoss.setAttribute('src', 'assets/audio/loss.mp3');
-	//reset of audio to prevent delay
-	audioAttack1.addEventListener("timeupdate", function() {
-		if (parseInt(this.currentTime, 10) > 1) {
-			this.pause();
-			this.currentTime = 0;
+	var audioTheme = document.createElement('audio');
+	audioTheme.setAttribute('src', 'assets/audio/theme.mp3');
 
-		}
-	});
-	//reset of audio to prevent delay
-	audioAttack2.addEventListener("timeupdate", function() {
-		if (parseInt(this.currentTime, 10) > 1) {
-			this.pause();
-			this.currentTime = 0;
-		}
-	});
+	//play theme song
+	audioTheme.play();
 
 	//Execute upon page load
 	//get character information from json file and add data to index.html
@@ -182,12 +179,16 @@ $(document).ready(function() {
 	});
 
 
+	//*******
+	// ON CLICK event listeners
+	//*******
 
 	//Action when rogue list is selected
 	$(".col-img").on("click", function() {
 		var clickedCharacter = $(this).children(".rogue-list").attr("alt");
 		var isDefeated = $(this).hasClass("defeated");
 		if (game.selectCharacter === false) {
+			audioTheme.pause();
 			//select character to start game
 			$("#attack-btn").addClass("d-none");
 			game.selectCharacter = true;
@@ -199,18 +200,15 @@ $(document).ready(function() {
 			game.selectOpponent = true;
 			//select opponet to being attack if not already defeated
 			game.newOpponent(clickedCharacter);
-			//game.assignOpponent(clickedCharacter);
 		}
 	});
 
 	//action when attack is selected
 	$("#attack-btn").on("click", function() {
 
-
 		if (game.player.hp > 0 && game.selectOpponent === true) {
-			//play attack sound
+			// randomly play 1 of 2 attack sounds
 			var randomNum = Math.floor(Math.random() * 2) + 1;
-			console.log(randomNum)
 			if (randomNum === 1) {
 				audioAttack1.play();
 			} else {
@@ -219,10 +217,6 @@ $(document).ready(function() {
 
 			//animate player attack
 			game.animateAttack("#player-character","player");
-
-
-
-
 
 			//update message
 			$(".message-col p").text(game.player.name + " attacked with " +
@@ -243,6 +237,7 @@ $(document).ready(function() {
 				$(game.opponent.colName).removeClass("d-none active-rogue").addClass("defeated");
 
 				if (game.opponentsDefeated >= 3) {
+
 					
 					$(".message-col p").text("You have defeated all the rogues! Press reset to play again.");
 				}
@@ -260,15 +255,18 @@ $(document).ready(function() {
 			$("#player-attack").text(game.player.attack);
 			$("#player-hp").text(game.player.hp);
 		}
-
+		
+		//check if player lost game
 		if (game.player.hp < 0) {
 			//player has lost the game play audio for losing
 			audioLoss.play();
+			
 			//display message to let player know of defeat
 			$(".message-col p").text("You have been deafeated. Reset the game to play again.");
 			//remove player and attack btn
 			$("#attack-btn").addClass("d-none");
 			$(".player").addClass("d-none");
+
 		}
 	});
 
