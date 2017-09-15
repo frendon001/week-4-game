@@ -2,7 +2,7 @@
 
 Checkout my Justice League RPG game!
 
-Start playing by visiting this link: https://frendon001.github.io/week-4-homework/
+Start playing by visiting this link: https://frendon001.github.io/week-4-game/
 
 ## Getting Started
 
